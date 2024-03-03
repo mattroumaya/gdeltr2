@@ -1082,9 +1082,6 @@ get_gdelt_url_data <-
            empty_trash = T,
            return_message = T) {
 
-
-    browser()
-
     use_tmp_file <-
       file_directory %>%
       is_null()
