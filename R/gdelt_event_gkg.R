@@ -1083,6 +1083,8 @@ get_gdelt_url_data <-
            return_message = T) {
 
 
+    browser()
+
     use_tmp_file <-
       file_directory %>%
       is_null()
@@ -1198,18 +1200,7 @@ get_gdelt_url_data <-
           gdelt_data %>%
           mutate_at(gdelt_data %>% dplyr::select(dplyr::matches("is")) %>% names(),
                     funs(. %>% as.logical()))
-        gdelt_data <-
-          gdelt_data %>%
-          dplyr::left_join(tibble(
-            classQuad =  1:4,
-            nameQuad =  c(
-              'Verbal Cooperation',
-              'Material Cooperation',
-              'Verbal Conflict',
-              'Material Conflict'
-            )
-          )) %>%
-          suppressMessages()
+
       }
 
       if (gdelt_cols == 57) {
@@ -1295,18 +1286,6 @@ get_gdelt_url_data <-
           mutate_at(gdelt_data %>% dplyr::select(dplyr::matches("is")) %>% names(),
                     funs(. %>% as.logical()))
 
-        gdelt_data <-
-          gdelt_data %>%
-          dplyr::left_join(tibble(
-            classQuad =  1:4,
-            nameQuad =  c(
-              'Verbal Cooperation',
-              'Material Cooperation',
-              'Verbal Conflict',
-              'Material Conflict'
-            )
-          )) %>%
-          suppressMessages()
       }
 
       if (gdelt_cols == 58) {
@@ -1391,19 +1370,6 @@ get_gdelt_url_data <-
           gdelt_data %>%
           dplyr::mutate_at(gdelt_data %>% dplyr::select(dplyr::matches("is")) %>% names(),
                               funs(. %>% as.logical()))
-
-        gdelt_data <-
-          gdelt_data %>%
-          dplyr::left_join(tibble(
-            classQuad =  1:4,
-            nameQuad =  c(
-              'Verbal Cooperation',
-              'Material Cooperation',
-              'Verbal Conflict',
-              'Material Conflict.'
-            )
-          )) %>%
-          suppressMessages()
 
       }
 
@@ -1643,18 +1609,6 @@ get_gdelt_url_data <-
           dplyr::mutate_at(gdelt_data %>% dplyr::select(dplyr::matches("is")) %>% names(),
                            funs(. %>% as.logical()))
 
-        gdelt_data <-
-          gdelt_data %>%
-          dplyr::left_join(tibble(
-            classQuad =  1:4,
-            nameQuad =  c(
-              'Verbal Cooperation',
-              'Material Cooperation',
-              'Verbal Conflict',
-              'Material Conflict'
-            )
-          )) %>%
-          suppressMessages()
       }
 
       if (gdelt_cols == 57) {
@@ -1739,18 +1693,7 @@ get_gdelt_url_data <-
           dplyr::mutate_at(gdelt_data %>% dplyr::select(dplyr::matches("is")) %>% names(),
                            funs(. %>% as.logical()))
 
-        gdelt_data <-
-          gdelt_data %>%
-          dplyr::left_join(tibble(
-            classQuad =  1:4,
-            nameQuad =  c(
-              'Verbal Cooperation',
-              'Material Cooperation',
-              'Verbal Conflict',
-              'Material Conflict'
-            )
-          )) %>%
-          suppressMessages()
+
       }
 
       if (gdelt_cols == 58) {
@@ -1839,18 +1782,6 @@ get_gdelt_url_data <-
           dplyr::mutate_at(gdelt_data %>% dplyr::select(dplyr::matches("is")) %>% names(),
                            funs(. %>% as.logical()))
 
-        gdelt_data <-
-          gdelt_data %>%
-          dplyr::left_join(tibble(
-            classQuad =  1:4,
-            nameQuad =  c(
-              'Verbal Cooperation',
-              'Material Cooperation',
-              'Verbal Conflict',
-              'Material Conflict.'
-            )
-          )) %>%
-          suppressMessages()
 
       }
 
