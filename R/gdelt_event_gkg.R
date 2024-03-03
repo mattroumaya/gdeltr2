@@ -1082,6 +1082,7 @@ get_gdelt_url_data <-
            empty_trash = T,
            return_message = T) {
 
+
     use_tmp_file <-
       file_directory %>%
       is_null()
@@ -1279,12 +1280,13 @@ get_gdelt_url_data <-
             "dateAdded"
           )
 
+
         gdelt_data <-
           gdelt_data %>%
           dplyr::rename(dateDocument = dateAdded) %>%
           dplyr::mutate(
-            dateEvent = dateEvent %>% lubridate::ymd,
-            dateDocument = dateDocument %>% lubridate::ymd
+            dateEvent = lubridate::ymd(dateEvent),
+            dateDocument = lubridate::ymd(dateDocument)
           ) %>%
           suppressWarnings()
 
@@ -4637,6 +4639,8 @@ get_data_gdelt_period_event <- function(period = 1983,
                                         remove_files = T,
                                         empty_trash = T,
                                         return_message = T) {
+
+
   period <-
     period %>%
     as.character() %>%
